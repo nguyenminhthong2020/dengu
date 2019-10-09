@@ -9,12 +9,6 @@ var swaggerJSDoc = require('swagger-jsdoc');
 var compression = require('compression');
 var app = express();
 
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
-});
-
 // swagger definition
 var swaggerDefinition = {
   info: {
@@ -69,7 +63,7 @@ app.use('/api', require('./api/api'));
 
 
 //Xác định trang "public" cho client
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 app.use('*', function(req, res, next) {
    res.sendFile(path.join(__dirname,'/dist/index.html'));
