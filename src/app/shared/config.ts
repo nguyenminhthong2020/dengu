@@ -1,4 +1,4 @@
 export class AppConfig {
-    public apiHost = "https://tpltesting.herokuapp.com/api";
-    public host = "https://tpltesting.herokuapp.com";
+    public apiHost = "https://dengu.herokuapp.com/api";
+    public host = "https://dengu.herokuapp.com";
 }
